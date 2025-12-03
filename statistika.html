@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Statistika</title>
+</head>
+<body>
+  <div class="ram">
+    <h3 class="SATR">STATISTIKA</h3>
+
+    <!-- 🔍 QIDIRUV OYNA -->
+    <input 
+      type="text" 
+      id="search" 
+      placeholder="Ism bo'yicha qidirish..." 
+      style="
+        width:88%;
+        margin: 10px auto;
+   
+        padding:12px;
+        border-radius:12px;
+        border:none;
+        outline:none;
+        font-size:18px;
+        position: absolute;
+        top: 14%;
+        "
+    >
+
+    <div class="ram1" id="statList" style="padding:20px; overflow-y:auto;"></div>
+    
+    <a href="index.html"><button class="odam2"><img class="imf" src="Screenshot 2025-12-03 141935.png"></button></a>
+    <a href="odamlar.html"><button class="statistika1"><img class="img2" src="Screenshot 2025-12-03 142930.png"></button></a>
+  </div>
+
+  <script>
+    const stat = JSON.parse(localStorage.getItem('statistika') || '[]');
+    const listElement = document.getElementById('statList');
+    const searchInput = document.getElementById('search');
+
+    // 🔄 Roʻyxatni chizish funksiyasi
+    function renderList(filter = "") {
+      let html = "";
+      let data = stat.filter(item => item.ism.toLowerCase().includes(filter.toLowerCase()));
+
+      data.forEach(item => {
+        const rang = item.holat === 'kech' 
+          ? 'background: rgba(25,255,0,0.3);' 
+          : 'background: rgba(255,100,100,0.3);';
+
+        html += `
+          <div style="${rang} margin:15px; padding:20px; border-radius:25px;">
+            <b>${item.ism}</b> - ${item.sinf} - ${item.sana} → 
+            ${item.holat === 'kech' ? 'KECHGA QOLIB ' : 'KELMAGAN'}
+          </div>
+        `;
+      });
+
+      listElement.innerHTML = html || '<h3 style="text-align:center; color:#aaa;">Topilmadi</h3>';
+    }
+
+    // 🔍 Qidiruv event
+    searchInput.addEventListener("input", () => {
+      renderList(searchInput.value);
+    });
+
+    // Sahifa ochilganda ro‘yxatni ko‘rsatish
+    renderList();
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>o'quvchi qo'shish</title>
+</head>
+<body>
+  <div class="ram">
+    <div class="ramka">
+      <h3 class="SATR">O'QUVCHI QO'SHISH</h3>
+      <div class="ram1"></div>
+      
+      <a href="index.html">
+        <button class="odam">
+          <img class="imf" src="Screenshot 2025-12-03 141935.png" alt="">
+        </button>
+      </a>
+      <a href="statistika.html">
+        <button class="statistika">
+          <img class="img2" src="Screenshot 2025-12-03 142930.png" alt="">
+        </button>
+      </a>
+
+      <input type="text" class="ISM" id="ismInput" placeholder="Ism Familya">
+      <h5 class="SM">ISM FAMILYA</h5>
+      <h4 class="SNF">SINF</h4>
+
+      <button class="A8" data-sinf="8A">8A</button>
+      <button class="B8" data-sinf="8B">8B</button>
+      <button class="A9" data-sinf="9A">9A</button>
+      <button class="B9" data-sinf="9B">9B</button>
+      <button class="A10" data-sinf="10A">10A</button>
+      <button class="A11" data-sinf="11A">11A</button>
+    </div>
+  </div>
+
+  <script>
+    let tanlanganSinf = null
+    document.querySelectorAll('.A8, .B8, .A9, .B9, .A10, .A11').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.A8, .B8, .A9, .B9, .A10, .A11').forEach(b => b.style.backgroundColor = 'blue');
+        this.style.backgroundColor = 'green';
+        tanlanganSinf = this.getAttribute('data-sinf');
+      });
+    });
+
+    // Enter bosganda saqlash
+    document.getElementById('ismInput').addEventListener('keyup', function(e) {
+      if (e.key === 'Enter' && this.value.trim() !== '' && tanlanganSinf) {
+        const ism = this.value.trim().toUpperCase();
+        let baza = JSON.parse(localStorage.getItem('oquvchilar') || '[]');
+        baza.push({ ism: ism, sinf: tanlanganSinf });
+        localStorage.setItem('oquvchilar', JSON.stringify(baza));
+
+        this.value = '';
+        document.querySelectorAll('.A8, .B8, .A9, .B9, .A10, .A11').forEach(b => b.style.backgroundColor = 'blue');
+        tanlanganSinf = null;
+        alert(ism + ' → ' + tanlanganSinf + ' ga qoʻshildi!');
+      }
+    });
+  </script>
+</body>
+</html>

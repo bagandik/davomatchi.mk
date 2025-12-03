@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>DAVOMATCHI.MK</title>
+</head>
+<body>
+  <div class="ram">
+    <div class="ramka">
+      <h3 class="SATR">DAVOMATCHI.MK</h3>
+<div class="ram1" id="absentContainer" 
+     style="max-height: 70vh; overflow-y: auto; padding-bottom: 20px;">
+</div>
+
+
+      <a href="odamlar.html">
+        <button class="odam">
+          <img class="imf" src="Screenshot 2025-12-03 141935.png" alt="">
+        </button>
+      </a>
+      <a href="statistika.html">
+        <button class="statistika">
+          <img class="img2" src="Screenshot 2025-12-03 142930.png" alt="">
+        </button>
+      </a>
+
+      <button class="odm" id="yashilPlus">+</button>
+    </div>
+  </div>
+
+  <!-- 1-oyna: Sinf tanlash -->
+  <div id="sinfModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:999;">
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90%; max-width:400px; background:#111; padding:20px; border-radius:20px; color:white; text-align:center;">
+      <h2>Sinfni tanlang</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0;">
+        <button onclick="ochSinf('8A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">8A</button>
+        <button onclick="ochSinf('8B')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">8B</button>
+        <button onclick="ochSinf('9A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">9A</button>
+        <button onclick="ochSinf('9B')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">9B</button>
+        <button onclick="ochSinf('10A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">10A</button>
+        <button onclick="ochSinf('11A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">11A</button>
+      </div>
+      <button onclick="document.getElementById('sinfModal').style.display='none'" style="background:#333; padding:12px 30px; border:none; border-radius:10px; color:white;">Bekor qilish</button>
+    </div>
+  </div>
+
+  <!-- 2-oyna: O'sha sinfdagi bolalar ro'yxati -->
+  <div id="bolalarModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:1000;">
+    <div
+   <div
+  style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: #111;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    
+    max-height: 85vh; 
+    overflow-y: auto; 
+  "
+>
+      <h2 
+      id="modalTitle" style="text-align:center; margin-bottom:15px;"></h2>
+      <div id="bolalarList" style="max-height:60vh; overflow-y:auto;"></div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="document.getElementById('bolalarModal').style.display='none'" style="background:#333; padding:12px 30px; border:none; border-radius:10px; color:white;">Yopish</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // + tugmasi
+    document.getElementById('yashilPlus').addEventListener('click', () => {
+      document.getElementById('sinfModal').style.display = 'block';
+    });
+
+    // Sinf tanlanganda
+    function ochSinf(sinf) {
+      document.getElementById('sinfModal').style.display = 'none';
+      document.getElementById('modalTitle').textContent = sinf + " sinfi";
+      
+      let oquvchilar = JSON.parse(localStorage.getItem('oquvchilar') || '[]');
+      let sinfBolalari = oquvchilar.filter(o => o.sinf === sinf);
+
+      let list = '';
+      if (sinfBolalari.length === 0) {
+        list = '<p style="text-align:center; color:#aaa;">Bu sinfda hali hech kim yoʻq</p>';
+      } else {
+        sinfBolalari.forEach(bola => {
+          list += `
+            <div onclick="yoqQil('${bola.ism}', '${bola.sinf}')" 
+                 style="background:rgba(255,255,255,0.15); margin:12px 0; padding:18px; border-radius:12px; font-size:19px; font-weight:bold; text-align:center; cursor:pointer; transition:0.2s;"
+                 onmouseover="this.style.background='rgba(255,100,100,0.4)'"
+                 onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+              ${bola.ism}
+            </div>`;
+        });
+      }
+      
+      document.getElementById('bolalarList').innerHTML = list;
+      document.getElementById('bolalarModal').style.display = 'block';
+    }
+
+    // Yo'q bo'lgan bolani asosiy sahifaga qo'shish
+    function yoqQil(ism, sinf) {
+      document.getElementById('bolalarModal').style.display = 'none';
+      
+      const bugun = new Date().toLocaleDateString('uz-UZ');
+      
+      const card = `
+        <div style="background:rgba(255,255,255,0.2); margin:20px auto; padding:20px; border-radius:20px; position:relative; max-width:92%; box-shadow:0 4px 15px rgba(255,0,0,0.3);">
+          <div style="font-size:26px; font-weight:bold; color:white;">${ism}</div>
+          <div style="font-size:19px; margin:8px 0; opacity:0.9;">SINF ${sinf}</div>
+          <div style="font-size:17px; color:#aaa;">${bugun}</div>
+          <button onclick="kechKeldi(this, '${ism}', '${sinf}', '${bugun}')" 
+                  style="position:absolute; right:15px; top:50%; transform:translateY(-50%); background:red; color:white; border:none; width:55px; height:55px; border-radius:50%; font-size:32px; cursor:pointer;">
+            −
+          </button>
+        </div>`;
+
+      document.getElementById('absentContainer').innerHTML += card;
+
+      // Statistika uchun saqlash
+      let stat = JSON.parse(localStorage.getItem('statistika') || '[]');
+      stat.push({ ism, sinf, sana: bugun, holat: 'yoq' });
+      localStorage.setItem('statistika', JSON.stringify(stat));
+    }
+
+    // Kech keldi → oʻchirish
+    function kechKeldi(btn, ism, sinf, sana) {
+      btn.parentElement.remove();
+      let stat = JSON.parse(localStorage.getItem('statistika') || '[]');
+      stat = stat.map(item => {
+        if (item.ism === ism && item.sana === sana) item.holat = 'kech';
+        return item;
+      });
+      localStorage.setItem('statistika', JSON.stringify(stat));
+    }
+    window.onload = function() {
+      let stat = JSON.parse(localStorage.getItem('statistika') || '[]');
+      const bugun = new Date().toLocaleDateString('uz-UZ');
+      stat.filter(s => s.sana === bugun && s.holat === 'yoq').forEach(item => {
+        document.getElementById('absentContainer').innerHTML += `
+          <div style="background:rgba(255,255,255,0.2); margin:20px auto; padding:20px; border-radius:20px; position:relative; max-width:92%;">
+            <div style="font-size:26px; font-weight:bold; color:white;">${item.ism}</div>
+            <div style="font-size:19px; margin:8px 0; opacity:0.9;">SINF ${item.sinf}</div>
+            <div style="font-size:17px; color:#aaa;">${item.sana}</div>
+            <button onclick="kechKeldi(this, '${item.ism}', '${item.sinf}', '${item.sana}')" 
+                    style="position:absolute; right:15px; top:50%; transform:translateY(-50%); background:red; color:white; border:none; width:55px; height:55px; border-radius:50%; font-size:32px; cursor:pointer;">
+              −
+            </button>
+          </div>`;
+      });
+    }
+  </script>
+</body>
+</html>
