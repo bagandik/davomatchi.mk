@@ -4,29 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>o'quvchi qo'shish</title>
+  <title>O'quvchi qo'shish</title>
 </head>
 <body>
   <div class="ram">
     <div class="ramka">
       <h3 class="SATR">O'QUVCHI QO'SHISH</h3>
       <div class="ram1"></div>
-      
-      <a href="index.html">
-        <button class="odam">
-          <img class="imf" src="Screenshot 2025-12-03 141935.png" alt="">
-        </button>
-      </a>
-      <a href="statistika.html">
-        <button class="statistika">
-          <img class="img2" src="Screenshot 2025-12-03 142930.png" alt="">
-        </button>
-      </a>
+     
+      <a href="index.html"><button class="odam"><img class="imf" src="Screenshot 2025-12-03 141935.png"></button></a>
+      <a href="statistika.html"><button class="statistika"><img class="img2" src="Screenshot 2025-12-03 142930.png"></button></a>
 
       <input type="text" class="ISM" id="ismInput" placeholder="Ism Familya">
       <h5 class="SM">ISM FAMILYA</h5>
       <h4 class="SNF">SINF</h4>
-
+      
       <button class="A8" data-sinf="8A">8A</button>
       <button class="B8" data-sinf="8B">8B</button>
       <button class="A9" data-sinf="9A">9A</button>
@@ -37,29 +29,206 @@
   </div>
 
   <script>
-    let tanlanganSinf = null
-    document.querySelectorAll('.A8, .B8, .A9, .B9, .A10, .A11').forEach(btn => {
+
+    const dastlabkiOquvchilar = [
+      { ism: "КОМИЛОВ АСРОРБЕК", sinf: "8A" },
+      { ism: "ЎРУНБОЕВ ШАХРИЁР ИХТИЁР", sinf: "8A" },
+      { ism: "РУСТАМОВ ШАХРИЁР ", sinf: "8A" }, 
+      { ism: "Doʻrumboyeva Ziyodaxon", sinf: "8A" },
+      { ism: "Matyaqubov Koʻvonchbek", sinf: "8A" }, 
+            { ism: "Klichova Norxonoy", sinf: "8A" },
+      { ism: "Usmonov Xusniddin", sinf: "8A" }, 
+      { ism: "Umarov Sayfullo", sinf: "8A" },
+      { ism: "Sheripova Zarina", sinf: "8A" }, 
+            { ism: "Saparboyev Dilxush", sinf: "8A" },
+      { ism: "Saparbayev Amirxon", sinf: "8A" }, 
+      { ism: "Samandarova Sarvinoz", sinf: "8A" },
+      { ism: "Salimboyeva Shoxista", sinf: "8A" }, 
+            { ism: "Salimboyeva Xayitxon", sinf: "8A" },
+      { ism: "Ramatova Bibisharifa", sinf: "8A" }, 
+      { ism: "Raxabova Dilnura  ", sinf: "8A" },
+      { ism: "Maxmudova Xayitgʻul", sinf: "8A" }, 
+      { ism: "Botirova Maftuna", sinf: "8A" }, 
+      { ism: "Abdullayev Abdulaziz", sinf: "8A" },
+      { ism: "Xudoyberganova Saidahon", sinf: "8A" },
+      { ism: "Koʻromboyeva Gʻulasar", sinf: "8A" },
+      
+      { ism: "Zakirjonova Durdona", sinf: "8B" },
+      { ism: "Ashirbayev Nodirbek", sinf: "8B" },
+      { ism: "Ikromova Mastona", sinf: "8B" },
+      { ism: "Ashirboyev Navroʻzbek", sinf: "8B" },
+      { ism: "Salimov Rashidbek", sinf: "8B" },
+      { ism: "Saparov Shoxjahon", sinf: "8B" },
+      { ism: "Saidaxonov Sultonmurod", sinf: "8B" },
+      { ism: "Ruzmetova Savoxat", sinf: "8B" },
+      { ism: "Roʻzimova Savrina", sinf: "8B" },
+      { ism: "Raxaboyeva Shaxnam", sinf: "8B" },
+      { ism: "Oʻrunbayev Madatbek", sinf: "8B" },
+      { ism: "Maxsudov Shoxjahon", sinf: "8B" },
+      { ism: "Xumaniyazova Oltinoy", sinf: "8B" },
+      { ism: "Xumabayeva Feruzaxon", sinf: "8B" },
+      { ism: "Ikramova Xayrona", sinf: "8B" },
+      { ism: "Ibragimov Bunyodbek", sinf: "8B" },
+      { ism: "Fayzullayeva Sevinchoy", sinf: "8B" },
+      { ism: "Ergashova Asalxon", sinf: "8B" },
+      { ism: "Baxtiyorova Nigina", sinf: "8B" },
+
+            { ism: "Saparboyeva Gulgexra", sinf: "9A" },
+      { ism: "Xoʻjaniyozov Axmad", sinf: "9A" },
+      { ism: "Umarov Baxrullo", sinf: "9A" },
+      { ism: "Xamroyeva Kumush", sinf: "9A" },
+      { ism: "Zaripbayeva Roxilona", sinf: "9A" },
+      { ism: "Xudarganov Otavek", sinf: "9A" },
+      { ism: "Abdullayev Isobek", sinf: "9A" },
+      { ism: "Abdullayeva Abdurashida", sinf: "9A" },
+      { ism: "Sabirova Gulasal", sinf: "9A" },
+      { ism: "Saparboyev Orifjon", sinf: "9A" },
+      { ism: "Saparbayev Bunyodbek", sinf: "9A" },
+      { ism: "Ruzimova Nozimaxon", sinf: "9A" },
+      { ism: "Raximova Charosxon", sinf: "9A" },
+      { ism: "Klichova Sarvinoz", sinf: "9A" },
+      { ism: "Klichova Mexriniso", sinf: "9A" },
+      { ism: "Otaboyev Shoxjahon", sinf: "9A" },
+      { ism: "Ollaberganova Asalxon", sinf: "9A" },
+      { ism: "Kuramboyeva Gulsevar", sinf: "9A" },
+      { ism: "Komilov Abrorbek", sinf: "9A" },
+      { ism: "Xaitboyeva Sarvinoz", sinf: "9A" },
+      { ism: "G'ayratova Ruxshona", sinf: "9A" },
+      { ism: "Davlatov Umidjon", sinf: "9A" },
+      { ism: "Bagandikov Bagandik", sinf: "9A" },
+
+      { ism: "Saparboev Sayfullo", sinf: "10A" },
+      { ism: "Komilova Malika", sinf: "10A" },
+      { ism: "Erkinov Otajon", sinf: "10A" },
+      { ism: "Rustamova Kumushbibi", sinf: "10A" },
+      { ism: "Raxabboyeva Mavjuda", sinf: "10A" },
+      { ism: "Raxabboyeva Charosxon", sinf: "10A" },
+      { ism: "Sobirova Sevinchoy", sinf: "10A" },
+      { ism: "Satimbayeva Lobob", sinf: "10A" },
+      { ism: "Ravshanova Savrina", sinf: "10A" },
+      { ism: "Mirzayev Yusufboy", sinf: "10A" },
+      { ism: "Karimboyev Farruxbek", sinf: "10A" },
+      { ism: "Xumaniyazova Rayxona", sinf: "10A" },
+      { ism: "Iskandarova Dinora", sinf: "10A" },
+      { ism: "Foyibov Bexruzbek", sinf: "10A" },
+      { ism: "Durumbayeva Dilnura", sinf: "10A" },
+      { ism: "Boltabayeva Dinora", sinf: "10A" },
+      { ism: "Ashirbayeva Maftunaxon", sinf: "10A" },
+      { ism: "Kurambayeva Shahlo", sinf: "10A" },
+      { ism: "Foyibov Farruxbek", sinf: "10A" },
+      { ism: "Raxabboyeva Mushtariy", sinf: "10A" },
+      { ism: "Saidnazarova Sayyora", sinf: "10A" },
+      { ism: "Abdullayeva Zebiniso", sinf: "10A" },
+      { ism: "Sattarbayeva Shaxlo", sinf: "10A" },
+      { ism: "Ollaberganova Charosxon", sinf: "10A" },
+      { ism: "Durumboyeva Muxlisa", sinf: "10A" },
+      { ism: "Raximov Shepzod", sinf: "10A" },
+      { ism: "Xudarganova Shoxista", sinf: "10A" },
+
+      { ism: "Doʻrumbayev Musobek", sinf: "11A" },
+      { ism: "Fayzurova Iroda", sinf: "11A" },
+      { ism: "Saparbaeva Ruxsora", sinf: "11A" },
+      { ism: "Botirova Zulola", sinf: "11A" },
+      { ism: "Artikova Surayyoxon", sinf: "11A" },
+      { ism: "Qadamboyeva Gulruxsor", sinf: "11A" },
+      { ism: "Janirov Koʻvonchbek", sinf: "11A" },
+      { ism: "Bobojonova Raximaxon", sinf: "11A" },
+      { ism: "Otaxanova Gulbaxor", sinf: "11A" },
+      { ism: "Raxmatova Nilufar", sinf: "11A" },
+      { ism: "Toʻrayeva Nozima", sinf: "11A" },
+      { ism: "Tillayeva Aziza", sinf: "11A" },
+      { ism: "Samandarova Ruxshona", sinf: "11A" },
+      { ism: "Raximboyev Lazizbek", sinf: "11A" },
+      { ism: "Qodirova Diyeva Safiya", sinf: "11A" },
+      { ism: "Klichova Zebiniso", sinf: "11A" },
+      { ism: "Klichova Xabiba", sinf: "11A" },
+      { ism: "Klichov Fozilbek", sinf: "11A" },
+      { ism: "Masharipov Surojbek", sinf: "11A" },
+      { ism: "Xumaniyazova Feruzaxon", sinf: "11A" },
+      { ism: "Egamberdiyeva Munira", sinf: "11A" },
+      { ism: "Abdullayeva Savrina", sinf: "11A" },
+      { ism: "Razzakov Mexrojbek", sinf: "11A" },
+      
+            { ism: "Otaxonova Munavvar", sinf: "9B" },
+      { ism: "Baxodirov Jasurbek", sinf: "9B" },
+      { ism: "Yorashov Bunyodbek", sinf: "9B" },
+      { ism: "Xudoyberganov Sardorbek", sinf: "9B" },
+      { ism: "Sobirov Sobirjon", sinf: "9B" },
+      { ism: "Roʻzimova Gulmira", sinf: "9B" },
+      { ism: "Raximboyeva Shoxzoda", sinf: "9B" },
+      { ism: "Ravshanbekov Xusanboy", sinf: "9B" },
+      { ism: "Ravshanbekov Xasanboy", sinf: "9B" },
+      { ism: "Mirzayeva Feride", sinf: "9B" },
+      { ism: "Karimboyeva Dilnura", sinf: "9B" },
+      { ism: "Jabbobov Jaxongir", sinf: "9B" },
+      { ism: "Ibragimova Nozima", sinf: "9B" },
+      { ism: "Foyibov Azizbek", sinf: "9B" },
+      { ism: "Egamberdiyeva Feruza", sinf: "9B" },
+      { ism: "Doʻrumbayev Oybek", sinf: "9B" },
+      { ism: "Allabergov Oybek", sinf: "9B" },
+      { ism: "Abdullayeva Dilnavoz", sinf: "9B" },
+
+    ];
+
+    if (!localStorage.getItem('oquvchilar') || JSON.parse(localStorage.getItem('oquvchilar')).length === 0) {
+      localStorage.setItem('oquvchilar', JSON.stringify(dastlabkiOquvchilar));
+      console.log("Birinchi marta barcha o'quvchilar yuklandi!");
+    }
+
+    let tanlanganSinf = null;
+
+    // Sinf tugmalari
+    document.querySelectorAll('[data-sinf]').forEach(btn => {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.A8, .B8, .A9, .B9, .A10, .A11').forEach(b => b.style.backgroundColor = 'blue');
+        document.querySelectorAll('[data-sinf]').forEach(b => b.style.backgroundColor = 'blue');
         this.style.backgroundColor = 'green';
         tanlanganSinf = this.getAttribute('data-sinf');
       });
     });
 
-    // Enter bosganda saqlash
+    // YANGI O'QUVCHI QO'SHISH (saytdan)
     document.getElementById('ismInput').addEventListener('keyup', function(e) {
       if (e.key === 'Enter' && this.value.trim() !== '' && tanlanganSinf) {
         const ism = this.value.trim().toUpperCase();
-        let baza = JSON.parse(localStorage.getItem('oquvchilar') || '[]');
+        let baza = JSON.parse(localStorage.getItem('oquvchilar'));
+
+        if (baza.some(item => item.ism === ism && item.sinf === tanlanganSinf)) {
+          alert("Bu o'quvchi allaqachon bor!");
+          return;
+        }
+
         baza.push({ ism: ism, sinf: tanlanganSinf });
         localStorage.setItem('oquvchilar', JSON.stringify(baza));
 
         this.value = '';
-        document.querySelectorAll('.A8, .B8, .A9, .B9, .A10, .A11').forEach(b => b.style.backgroundColor = 'blue');
+        document.querySelectorAll('[data-sinf]').forEach(b => b.style.backgroundColor = 'blue');
         tanlanganSinf = null;
-        alert(ism + ' → ' + tanlanganSinf + ' ga qoʻshildi!');
+        alert(ism + " qo'shildi!");
       }
     });
+
+    // O'CHIRISH UCHUN MAXSUS KOD (faqat siz ishlatasiz!)
+    // Agar biror o'quvchini o'chirmoqchi bo'lsangiz, brauzer konsolida quyidagini yozing:
+    // ochirish("ALIYEV ALISHER", "8A")
+    window.ochirish = function(ism, sinf) {
+      if (confirm(`${ism} (${sinf}) ni ro'yxatdan o'chirishni xohlaysizmi?`)) {
+        let baza = JSON.parse(localStorage.getItem('oquvchilar'));
+        baza = baza.filter(item => !(item.ism === ism && item.sinf === sinf));
+        localStorage.setItem('oquvchilar', JSON.stringify(baza));
+        alert(ism + " o'chirildi!");
+      }
+    };
+
+    // localStorage ni tozalash va yana to'liq tiklash uchun (faqat siz!)
+    window.reset = function() {
+      if (confirm("Barcha ma'lumotlar o'chib, kod ichidagi ro'yxat qayta yuklanadi. Davom etasizmi?")) {
+        localStorage.removeItem('oquvchilar');
+        location.reload();
+      }
+    };
+
+    console.log("%cO'quvchilarni o'chirish uchun: ochirish('ISM FAMILYA', 'SINF')", "color: red; font-size: 16px;");
+    console.log("%cHammasini tiklash uchun: reset()", "color: green; font-size: 16px;");
   </script>
 </body>
-</html>
+</html> 
