@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Statistika</title>
 </head>
+
 <body>
-  <div class="ram">
-    <h3 class="SATR">STATISTIKA</h3>
+  <div class="ra1">
+    <h3 class="SATR1">STATISTIKA</h3>
 
     <!-- 🔍 QIDIRUV OYNA -->
-    <input 
-      type="text" 
-      id="search" 
-      placeholder="Ism bo'yicha qidirish..." 
-      style="
-        width:88%;
+    <input type="text" id="search" placeholder="Ism bo'yicha qidirish..." style="
+        width:75%;
         margin: 10px auto;
    
         padding:12px;
@@ -26,13 +24,20 @@
         font-size:18px;
         position: absolute;
         top: 14%;
-        "
-    >
+        left: 10%;
+        ">
 
-    <div class="ram1" id="statList" style="padding:20px; overflow-y:auto;"></div>
-    
-    <a href="index.html"><button class="odam2"><img class="imf" src="Screenshot 2025-12-03 141935.png"></button></a>
-    <a href="odamlar.html"><button class="statistika1"><img class="img2" src="Screenshot 2025-12-03 142930.png"></button></a>
+    <div class="ram1" id="statList" style="padding:0px; overflow-y:auto;"></div>
+      <div class="bar">
+        <a class="statistdika1" href="statistika.html"><img class="ims"  src="equalizer_50dp_000000_FILL1_wght600_GRAD200_opsz48.svg" alt=""></a>
+         <a href="index.html"><button class="qoshish1">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z" />
+          </svg>
+    <a href="odamlar.html"><button class="statistika1"><img class="img2"
+          src="person_add_50dp_000000_FILL1_wght600_GRAD200_opsz48.svg"></button></a>
   </div>
 
   <script>
@@ -40,14 +45,13 @@
     const listElement = document.getElementById('statList');
     const searchInput = document.getElementById('search');
 
-    // 🔄 Roʻyxatni chizish funksiyasi
     function renderList(filter = "") {
       let html = "";
       let data = stat.filter(item => item.ism.toLowerCase().includes(filter.toLowerCase()));
 
       data.forEach(item => {
-        const rang = item.holat === 'kech' 
-          ? 'background: rgba(25,255,0,0.3);' 
+        const rang = item.holat === 'kech'
+          ? 'background: rgba(25,255,0,0.3);'
           : 'background: rgba(255,100,100,0.3);';
 
         html += `
@@ -65,9 +69,8 @@
     searchInput.addEventListener("input", () => {
       renderList(searchInput.value);
     });
-
-    // Sahifa ochilganda ro‘yxatni ko‘rsatish
     renderList();
   </script>
 </body>
+
 </html>
