@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>O'quvchi qo'shish</title>
 </head>
+
 <body>
   <div class="ram">
     <div class="ramka">
       <h3 class="SATR">O'QUVCHI QO'SHISH</h3>
       <div class="ram1"></div>
-     
-      <a href="index.html"><button class="odam"><img class="imf" src="Screenshot 2025-12-03 141935.png"></button></a>
-      <a href="statistika.html"><button class="statistika"><img class="img2" src="Screenshot 2025-12-03 142930.png"></button></a>
-
+      <div class="bar">
+          </button>
+        </a>
+                <a href="odamlar.html">
+          <button class="odam3">
+            <img class="rasm" src="person_add_50dp_000000_FILL1_wght600_GRAD200_opsz48.svg" alt="" c>
+          </button>
+        <a href="index.html"><button class="qoshish1">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z" />
+            </svg>
+          </button></a>>
+      <a href="statistika.html"><button class="statistika"><img class="img2"
+            src="equalizer_50dp_000000_FILL1_wght600_GRAD200_opsz48.svg"></button></a>
+</div>
       <input type="text" class="ISM" id="ismInput" placeholder="Ism Familya">
       <h5 class="SM">ISM FAMILYA</h5>
       <h4 class="SNF">SINF</h4>
-      
+
       <button class="A8" data-sinf="8A">8A</button>
       <button class="B8" data-sinf="8B">8B</button>
       <button class="A9" data-sinf="9A">9A</button>
       <button class="B9" data-sinf="9B">9B</button>
       <button class="A10" data-sinf="10A">10A</button>
       <button class="A11" data-sinf="11A">11A</button>
+
     </div>
+
   </div>
 
   <script>
 
     const dastlabkiOquvchilar = [
+
       { ism: "КОМИЛОВ АСРОРБЕК", sinf: "8A" },
       { ism: "ЎРУНБОЕВ ШАХРИЁР ИХТИЁР", sinf: "8A" },
-      { ism: "РУСТАМОВ ШАХРИЁР ", sinf: "8A" }, 
+      { ism: "РУСТАМОВ ШАХРИЁР ", sinf: "8A" },
       { ism: "Doʻrumboyeva Ziyodaxon", sinf: "8A" },
-      { ism: "Matyaqubov Koʻvonchbek", sinf: "8A" }, 
-            { ism: "Klichova Norxonoy", sinf: "8A" },
-      { ism: "Usmonov Xusniddin", sinf: "8A" }, 
+      { ism: "Matyaqubov Koʻvonchbek", sinf: "8A" },
+      { ism: "Klichova Norxonoy", sinf: "8A" },
+      { ism: "Usmonov Xusniddin", sinf: "8A" },
       { ism: "Umarov Sayfullo", sinf: "8A" },
-      { ism: "Sheripova Zarina", sinf: "8A" }, 
-            { ism: "Saparboyev Dilxush", sinf: "8A" },
-      { ism: "Saparbayev Amirxon", sinf: "8A" }, 
+      { ism: "Sheripova Zarina", sinf: "8A" },
+      { ism: "Saparboyev Dilxush", sinf: "8A" },
+      { ism: "Saparbayev Amirxon", sinf: "8A" },
       { ism: "Samandarova Sarvinoz", sinf: "8A" },
-      { ism: "Salimboyeva Shoxista", sinf: "8A" }, 
-            { ism: "Salimboyeva Xayitxon", sinf: "8A" },
-      { ism: "Ramatova Bibisharifa", sinf: "8A" }, 
+      { ism: "Salimboyeva Shoxista", sinf: "8A" },
+      { ism: "Salimboyeva Xayitxon", sinf: "8A" },
+      { ism: "Ramatova Bibisharifa", sinf: "8A" },
       { ism: "Raxabova Dilnura  ", sinf: "8A" },
-      { ism: "Maxmudova Xayitgʻul", sinf: "8A" }, 
-      { ism: "Botirova Maftuna", sinf: "8A" }, 
+      { ism: "Maxmudova Xayitgʻul", sinf: "8A" },
+      { ism: "Botirova Maftuna", sinf: "8A" },
       { ism: "Abdullayev Abdulaziz", sinf: "8A" },
       { ism: "Xudoyberganova Saidahon", sinf: "8A" },
       { ism: "Koʻromboyeva Gʻulasar", sinf: "8A" },
-      
       { ism: "Zakirjonova Durdona", sinf: "8B" },
       { ism: "Ashirbayev Nodirbek", sinf: "8B" },
       { ism: "Ikromova Mastona", sinf: "8B" },
@@ -73,7 +90,7 @@
       { ism: "Ergashova Asalxon", sinf: "8B" },
       { ism: "Baxtiyorova Nigina", sinf: "8B" },
 
-            { ism: "Saparboyeva Gulgexra", sinf: "9A" },
+      { ism: "Saparboyeva Gulgexra", sinf: "9A" },
       { ism: "Xoʻjaniyozov Axmad", sinf: "9A" },
       { ism: "Umarov Baxrullo", sinf: "9A" },
       { ism: "Xamroyeva Kumush", sinf: "9A" },
@@ -148,8 +165,8 @@
       { ism: "Egamberdiyeva Munira", sinf: "11A" },
       { ism: "Abdullayeva Savrina", sinf: "11A" },
       { ism: "Razzakov Mexrojbek", sinf: "11A" },
-      
-            { ism: "Otaxonova Munavvar", sinf: "9B" },
+
+      { ism: "Otaxonova Munavvar", sinf: "9B" },
       { ism: "Baxodirov Jasurbek", sinf: "9B" },
       { ism: "Yorashov Bunyodbek", sinf: "9B" },
       { ism: "Xudoyberganov Sardorbek", sinf: "9B" },
@@ -177,17 +194,15 @@
 
     let tanlanganSinf = null;
 
-    // Sinf tugmalari
     document.querySelectorAll('[data-sinf]').forEach(btn => {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         document.querySelectorAll('[data-sinf]').forEach(b => b.style.backgroundColor = 'blue');
         this.style.backgroundColor = 'green';
         tanlanganSinf = this.getAttribute('data-sinf');
       });
     });
 
-    // YANGI O'QUVCHI QO'SHISH (saytdan)
-    document.getElementById('ismInput').addEventListener('keyup', function(e) {
+    document.getElementById('ismInput').addEventListener('keyup', function (e) {
       if (e.key === 'Enter' && this.value.trim() !== '' && tanlanganSinf) {
         const ism = this.value.trim().toUpperCase();
         let baza = JSON.parse(localStorage.getItem('oquvchilar'));
@@ -201,16 +216,13 @@
         localStorage.setItem('oquvchilar', JSON.stringify(baza));
 
         this.value = '';
-        document.querySelectorAll('[data-sinf]').forEach(b => b.style.backgroundColor = 'blue');
+        document.querySelectorAll('[data-sinf]').forEach(b => b.style.backgroundColor = '');
         tanlanganSinf = null;
         alert(ism + " qo'shildi!");
       }
     });
 
-    // O'CHIRISH UCHUN MAXSUS KOD (faqat siz ishlatasiz!)
-    // Agar biror o'quvchini o'chirmoqchi bo'lsangiz, brauzer konsolida quyidagini yozing:
-    // ochirish("ALIYEV ALISHER", "8A")
-    window.ochirish = function(ism, sinf) {
+    window.ochirish = function (ism, sinf) {
       if (confirm(`${ism} (${sinf}) ni ro'yxatdan o'chirishni xohlaysizmi?`)) {
         let baza = JSON.parse(localStorage.getItem('oquvchilar'));
         baza = baza.filter(item => !(item.ism === ism && item.sinf === sinf));
@@ -219,16 +231,15 @@
       }
     };
 
-    // localStorage ni tozalash va yana to'liq tiklash uchun (faqat siz!)
-    window.reset = function() {
+    window.reset = function () {
       if (confirm("Barcha ma'lumotlar o'chib, kod ichidagi ro'yxat qayta yuklanadi. Davom etasizmi?")) {
         localStorage.removeItem('oquvchilar');
         location.reload();
       }
     };
-
     console.log("%cO'quvchilarni o'chirish uchun: ochirish('ISM FAMILYA', 'SINF')", "color: red; font-size: 16px;");
     console.log("%cHammasini tiklash uchun: reset()", "color: green; font-size: 16px;");
   </script>
 </body>
-</html> 
+
+</html>
