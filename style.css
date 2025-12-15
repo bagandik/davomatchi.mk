@@ -1,17 +1,19 @@
-.ram{
-  background-color: black;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: -0.01%;
-  top: 0.1px;
-  
 
-}
-.SATR{
-  color: white;
+
+
+.ram{
+
+  width: 89.9%;
+  height: 95%;
   position: absolute;
-  left: 8%;
+  top: 0.1px;
+background: linear-gradient(to bottom, blue, white);
+}
+
+.SATR{
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 14%;
   top: 6%;
   font-size: 140%;
 }
@@ -35,6 +37,7 @@
   border: none;
   left: 10%;
   border-radius: 10px;
+  z-index: 999;
 }
 .imf{
   top: 990%;
@@ -98,7 +101,11 @@
 }
 .A8{
   position: absolute;
-  background-color: blue;
+background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
   color: aliceblue;
   width: 14%;
   height: 6%;
@@ -110,7 +117,11 @@
 }
 .B8{
     position: absolute;
-  background-color: blue;
+background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
   color: aliceblue;
   width: 14%;
   height: 6%;
@@ -123,7 +134,11 @@
 }
 .A9{
       position: absolute;
-  background-color: blue;
+background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
   color: aliceblue;
   width: 14%;
   height: 6%;
@@ -135,10 +150,13 @@
 
 }
 .B9{
-        position: absolute;
+  position: absolute;
   border-radius: 10px;;
-
-  background-color: blue;
+background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
   color: aliceblue;
   width: 14%;
   height: 6%;
@@ -148,7 +166,11 @@
 }
 .A10{
   position: absolute;
-  background-color: blue;
+background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
   color: aliceblue;
   width: 14%;
   height: 6%;
@@ -159,7 +181,11 @@
 }
 .A11{
   position: absolute;
-  background-color: blue;
+background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
   color: aliceblue;
   width: 14%;
   height: 6%;
@@ -186,12 +212,20 @@ padding: 20px;
 max-width: 500px;
 margin: auto;
 }
-
+.SATR1 {
+text-align: center;
+font-size: 28px;
+margin-bottom: 20px;
+position: absolute;
+left: 30%;
+top: 6%;
+}
 
 .SATR {
 text-align: center;
 font-size: 28px;
 margin-bottom: 20px;
+
 }
 
 
@@ -203,14 +237,29 @@ margin: 10px;
 
 
 .odm {
-width: 55px;
-height: 55px;
-font-size: 30px;
-border-radius: 50%;
-background: green;
-border: none;
-color: white;
-cursor: pointer;
+  width: 20%;
+  height: 7%;
+  position: absolute;
+  top: 14%;
+  left: 77%;
+  border-radius: 12PX;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  /* Shafoflik uchun oq rang, opacity bilan */
+  backdrop-filter: blur(15px);
+  /* Blur darajasi – 10-20px oralig'ida iOSga yaqin */
+  -webkit-backdrop-filter: blur(15px);
+  /* Safari va iOS uchun prefix */
+  border-radius: 16px;
+  /* Yumaloq burchaklar */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Nozik chegara */
+  box-shadow: 1px 8px 32px rgba(255, 255, 255, 0.1);
+  /* Yumshoq soya */
+
+  color: white;
+  /* Matn rangi – orqa fon qorong'i bo'lsa */
+  text-align: center;
 }
 
 
@@ -254,22 +303,219 @@ background: blue;
 }
 
 
-.odam2{
-    background-color: rgba(0, 0, 0, 0.096);
-  width: 20%;
-  height:10%;
-  position: absolute;
-  top: 96%;
-  border: none;
-  left: 10%;
+
+  .royhatScroll {
+  width: 92%;
+  height: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow-y: auto;
+  padding: 10px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.talaba {
+  background: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.royhatScroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.royhatScroll::-webkit-scrollbar-thumb {
+  background-color: #6d6afe;
   border-radius: 10px;
 }
-.statistika1{
-  background-color: rgba(198, 198, 198, 0.096);
-  width: 20%;
-  height:10%;
+
+.royhatScroll::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+
+
+.ram1 {
+  width: 96%;
+  height:60%;
   position: absolute;
-  top: 96%;
+  z-index: 0;
+  top: 23%;
+  left: 1.5%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 28px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+}
+.bar {
+
+  width: 80%;
+  height: 10%;
+  background-color: hsl(225, 100%, 91%);
+  position: absolute;
+  top: 87%;
+  left: 10%;
+  border-radius: 30px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 28px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+
+}
+.odam{
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left:3%;
+  background-color: hsl(225, 100%, 91%);
   border: none;
-  left: 70%;
-  border-radius: 10px;}
+  top: 1%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+}
+
+.qoshish {
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 41%;
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  top: 5%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+
+}
+
+.statistika{
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 69%;
+  background-color: hsl(225, 100%, 91%);
+  border: none;
+  top: 1%;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+}
+.ra1{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -0.00001%;
+  bottom: 10%;
+
+background: linear-gradient(to bottom, blue, white);
+}
+
+
+.odam2{
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 5%;
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  top: 10%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px;
+}
+.statistika1{
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 6%;
+  background-color: hsl(238, 23%, 48%);
+  border: none;
+  top: 10%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px;
+}
+.statistdika1 {
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 72.5%;
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  top: 5%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+}
+.ims{
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+.qoshish1{
+    width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 41%;
+  background-color: hsl(238, 100%, 93%);
+  border: none;
+  top: 10%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px;
+}
+.qoshish3{
+      width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 41%;
+  background-color: hsl(238, 100%, 93%);
+  border: none;
+  top: 11%;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px;
+}
+.odam3{
+  width: 20%;
+  height: 79%;
+  position: absolute;
+  left: 6%;
+  background-color: hsl(0, 0%, 100%);
+  border: none;
+  top:3%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+
+}
