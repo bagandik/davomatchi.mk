@@ -1,84 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style copy.css">
   <title>DAVOMATCHI.MK</title>
-
-  <!-- FAKAT SHU JOYGA BITTA STIL QO'SHILDI - SCROLL UCHUN -->
-  <style>
-    /* iPhone, Androidda silliq scroll */
-    #bolalarList {
-      -webkit-overflow-scrolling: touch !important;
-    }
-    
-    /* Chiroyli scroll chizig'i (faqat kompyuterda ko'rinsa ham bo'ladi) */
-    #bolalarList::-webkit-scrollbar {
-      width: 6px;
-    }
-    #bolalarList::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    #bolalarList::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.3);
-      border-radius: 10px;
-    }
-    #bolalarList::-webkit-scrollbar-thumb:hover {
-      background: rgba(255,255,255,0.5);
-    }
-  </style>
 </head>
+
 <body>
   <div class="ram">
     <div class="ramka">
       <h3 class="SATR">DAVOMATCHI.MK</h3>
-<div class="ram1" id="absentContainer" 
-     style="max-height: 70vh; overflow-y: auto; padding-bottom: 20px;">
-</div>
-
-      <a href="odamlar.html">
-        <button class="odam">
-          <img class="imf" src="Screenshot 2025-12-03 141935.png" alt="">
-        </button>
-      </a>
-      <a href="statistika.html">
-        <button class="statistika">
-          <img class="img2" src="Screenshot 2025-12-03 142930.png" alt="">
-        </button>
-      </a>
-
-      <button class="odm" id="yashilPlus">+</button>
-    </div>
-  </div>
-
-  <div id="sinfModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:999;">
-    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:90%; max-width:400px; background:#111; padding:20px; border-radius:20px; color:white; text-align:center;">
-<h2>Sinfni tanlang</h2>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0;">
-<button onclick="ochSinf('8A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">8A</button>
-<button onclick="ochSinf('8B')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">8B</button>
-<button onclick="ochSinf('9A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">9A</button>
-<button onclick="ochSinf('9B')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">9B</button>
-<button onclick="ochSinf('10A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">10A</button>
-<button onclick="ochSinf('11A')" style="padding:18px; background:blue; color:white; border:none; border-radius:12px; font-size:18px;">11A</button>
+      <div class="ram1" id="absentContainer" style="max-height: 70vh; overflow-y: auto; padding-bottom: 20px;">
       </div>
-      <button onclick="document.getElementById('sinfModal').style.display='none'" style="background:#333; padding:12px 30px; border:none; border-radius:10px; color:white;">Bekor qilish</button>
+      <div class="bar">
+        <a href="odamlar.html">
+          <button class="odam">
+            <img class="rasm" src="person_add_50dp_000000_FILL1_wght600_GRAD200_opsz48.svg" alt="" c>
+          </button>
+        </a>
+        <a href="statistika.html">
+          <button class="statistika">
+            <img class="img2" src="equalizer_50dp_000000_FILL1_wght600_GRAD200_opsz48.svg" alt="">
+          </button>
+        </a>
+        <a href="index.html"><button class="qoshish">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z" />
+            </svg>
+          </button></a>
+      </div>
+      <button class="odm" id="yashilPlus"><img src="add_notes_45dp_000000_FILL0_wght400_GRAD0_opsz48.svg"
+          alt=""></button>
     </div>
   </div>
 
-  <div id="bolalarModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:1000;">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 400px; background: #111; padding: 20px; border-radius: 20px; color: white; max-height: 85vh; overflow-y: auto;">
+  <div id="sinfModal"
+    style="display:none;
+     position:fixed; 
+     top:0; 
+     left:0; 
+     width:100%;
+      height:100%;
+         background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px;
+       z-index:999;">
+    <div style="position:absolute; 
+      top:50%; 
+      left:50%;
+       transform:translate(-50%,-50%);
+        width:90%; max-width:400px;
+         background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px;
+         padding:20px; 
+         border-radius:20px; 
+         color:white; text-align:center;">
+      <h2 class="snf">Sinfni tanlang</h2><style>
+        .snf{
+          color: #111;
+        }
+      </style>
+      <div style="display:grid; grid-template-columns:1fr 1fr;   gap:15px; margin:20px 0;">
+        <button onclick="ochSinf('8A')" style="padding:18px;
+  background:rgb(74, 101, 255); color:white; border:none; border-radius:12px; font-size:18px;">8A</button>
+        <button onclick="ochSinf('8B')"
+          style="padding:18px; background:rgb(74, 101, 255); color:white; border:none; border-radius:12px; font-size:18px;">8B</button>
+        <button onclick="ochSinf('9A')"
+          style="padding:18px; background:rgb(74, 101, 255); color:white; border:none; border-radius:12px; font-size:18px;">9A</button>
+        <button onclick="ochSinf('9B')"
+          style="padding:18px; background:rgb(74, 101, 255); color:white; border:none; border-radius:12px; font-size:18px;">9B</button>
+        <button onclick="ochSinf('10A')"
+          style="padding:18px; background:rgb(74, 101, 255); color:white; border:none; border-radius:12px; font-size:18px;">10A</button>
+        <button onclick="ochSinf('11A')"
+          style="padding:18px; background:rgb(74, 101, 255); color:white; border:none; border-radius:12px; font-size:18px;">11A</button>
+      </div>
+      <button onclick="document.getElementById('sinfModal').style.display='none'"
+        style="  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border-radius: 15px; padding:12px 30px; border:none; border-radius:10px; color:rgb(0, 0, 0);">Bekor qilish</button>
+    </div>
+  </div>
+
+  <div id="bolalarModal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139);
+  border: 10px;
+  border-color: #111;
+  color: #111;
+  
+  z-index:1000;">
+    <div
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 400px;  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 1px 5px rgb(139, 139, 139); padding: 20px; border-radius: 20px; color: rgb(0, 0, 0); max-height: 85vh; overflow-y: auto;">
       <h2 id="modalTitle" style="text-align:center; margin-bottom:15px;"></h2>
 
       <!-- ASL STIL SAQLANDI + SCROLL ZO'R BO'LDI -->
-      <div id="bolalarList" 
-           style="max-height:60vh; overflow-y:auto; -webkit-overflow-scrolling:touch;">
+      <div id="bolalarList" style="max-height:60vh; overflow-y:auto; -webkit-overflow-scrolling:touch;">
       </div>
 
       <div style="text-align:center; margin-top:20px;">
         <button onclick="document.getElementById('bolalarModal').style.display='none'"
-                style="background:#333; padding:12px 30px; border:none; border-radius:10px; color:white;">Yopish</button>
+          style="background:#333; padding:12px 30px; border:none; border-radius:10px; color:white;">Yopish</button>
       </div>
     </div>
   </div>
@@ -91,7 +134,7 @@
     function ochSinf(sinf) {
       document.getElementById('sinfModal').style.display = 'none';
       document.getElementById('modalTitle').textContent = sinf + " sinfi";
-      
+
       let oquvchilar = JSON.parse(localStorage.getItem('oquvchilar') || '[]');
       let sinfBolalari = oquvchilar.filter(o => o.sinf === sinf);
 
@@ -109,7 +152,7 @@
             </div>`;
         });
       }
-      
+
       document.getElementById('bolalarList').innerHTML = list;
       document.getElementById('bolalarModal').style.display = 'block';
     }
@@ -117,7 +160,7 @@
     function yoqQil(ism, sinf) {
       document.getElementById('bolalarModal').style.display = 'none';
       const bugun = new Date().toLocaleDateString('uz-UZ');
-      
+
       const card = `
         <div style="background:rgba(255,255,255,0.2); margin:20px auto; padding:20px; border-radius:20px; position:relative; max-width:92%; box-shadow:0 4px 15px rgba(255,0,0,0.3);">
           <div style="font-size:26px; font-weight:bold; color:white;">${ism}</div>
@@ -146,7 +189,7 @@
       localStorage.setItem('statistika', JSON.stringify(stat));
     }
 
-    window.onload = function() {
+    window.onload = function () {
       let stat = JSON.parse(localStorage.getItem('statistika') || '[]');
       const bugun = new Date().toLocaleDateString('uz-UZ');
       stat.filter(s => s.sana === bugun && s.holat === 'yoq').forEach(item => {
@@ -164,4 +207,5 @@
     }
   </script>
 </body>
+
 </html>
